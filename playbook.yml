@@ -1,0 +1,6 @@
+- name: Provision EndeavourOS
+  hosts: localhost
+  roles:
+    - vscode
+    - dotfiles
+
