@@ -1,4 +1,5 @@
 - name: Install VS Code
+  become: true
   community.general.pacman:
     state: latest
     name: code
@@ -7,6 +8,11 @@
   kewlfft.aur.aur:
     state: latest
     name: code-marketplace
+
+- name: Get installed extensions
+  command: code --list-extensions
+  register: installed_extensions
+  changed_when: false
 
 - name: Install extensions
   command: "code --install-extension {{ item }}"
@@ -19,3 +25,4 @@
     - tamasfe.even-better-toml
     - vscode-icons-team.vscode-icons
     - yzhang.markdown-all-in-one
+  when: "item not in installed_extensions.stdout"
