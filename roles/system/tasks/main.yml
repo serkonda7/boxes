@@ -12,5 +12,13 @@
     - meld
     - okular
 
+- name: Install packages
+  become: true
+  community.general.pacman:
+    state: latest
+    name: "{{ item }}"
+  with_items:
+    - falkon
+
 - name: Cleanup orphan dependencies
   command: yay -Yc --noconfirm
