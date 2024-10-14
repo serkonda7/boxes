@@ -1,0 +1,16 @@
+- name: Remove packages
+  become: true
+  community.general.pacman:
+    state: absent
+    name: "{{ item }}"
+  with_items:
+    - firefox
+    - firewalld
+    - haruna
+    - kdeconnect
+    - mpvqt
+    - meld
+    - okular
+
+- name: Cleanup orphan dependencies
+  command: yay -Yc --noconfirm
