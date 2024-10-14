@@ -1,22 +1,30 @@
+- name: Check if dotfiles exist
+  stat:
+    path: "{{ ansible_env.HOME }}/.dotfiles"
+  register: dotfiles_repo_exists
+
 - name: Install dotter
   kewlfft.aur.aur:
     state: latest
     name: dotter-rs-bin
 
-- name: Clone dotfiles
-  git:
-    repo: https://github.com/serkonda7/dotfiles
-    dest: "{{ ansible_env.HOME }}/.dotfiles"
-    update: true
-
-- name: Create local.toml
-  copy:
-    dest: "{{ ansible_env.HOME }}/.dotfiles/.dotter/local.toml"
-    content: |
-      includes = [".dotter/default.toml"]
-      packages = ["default"]
-    
 - name: Deploy dotfiles
-  command: dotter deploy --force
-  args:
-    chdir: "{{ ansible_env.HOME }}/.dotfiles"
+  when: not dotfiles_repo_exists.stat.exists
+  block:
+    - name: Clone dotfiles
+      git:
+        repo: https://github.com/serkonda7/dotfiles
+        dest: "{{ ansible_env.HOME }}/.dotfiles"
+        update: true
+
+    - name: Create local.toml
+      copy:
+        dest: "{{ ansible_env.HOME }}/.dotfiles/.dotter/local.toml"
+        content: |
+          includes = [".dotter/default.toml"]
+          packages = ["default"]
+
+    - name: Deploy using dotter
+      command: dotter deploy --force
+      args:
+        chdir: "{{ ansible_env.HOME }}/.dotfiles"
