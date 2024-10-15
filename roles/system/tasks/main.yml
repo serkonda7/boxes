@@ -4,6 +4,8 @@
     state: absent
     name: "{{ item }}"
   with_items:
+    - eos-apps-info
+    - eos-quickstart
     - firefox
     - firewalld
     - haruna
@@ -11,6 +13,7 @@
     - mpvqt
     - meld
     - okular
+    - welcome
 
 - name: Install packages
   become: true
@@ -19,6 +22,7 @@
     name: "{{ item }}"
   with_items:
     - falkon
+    - fastfetch
 
 - name: Cleanup orphan dependencies
   command: yay -Yc --noconfirm
