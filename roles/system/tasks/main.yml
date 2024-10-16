@@ -14,6 +14,8 @@
     - meld
     - okular
     - welcome
+  register: removals
+  changed_when: removals.changed
 
 - name: Install packages
   become: true
@@ -26,3 +28,16 @@
 
 - name: Cleanup orphan dependencies
   command: yay -Yc --noconfirm
+  register: cleanup
+  changed_when: cleanup.stdout != ""
+
+- name: Upgrade all packages
+  become: true
+  community.general.pacman:
+    upgrade: true
+  register: upgrades
+  changed_when: upgrades.changed
+
+- name: Reboot system
+  when: removals.changed or upgrades.changed
+  ansible.builtin.reboot:
