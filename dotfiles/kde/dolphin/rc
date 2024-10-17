@@ -1,0 +1,34 @@
+MenuBar=Disabled
+
+[ContentDisplay]
+UsePermissionsFormat=NumericFormat
+
+[ContextMenu]
+ShowViewMode=false
+
+[DetailsMode]
+PreviewSize=16
+UseSystemFont=false
+
+[General]
+DoubleClickViewAction=none
+OpenExternallyCalledFolderInNewTab=true
+ShowFullPath=true
+Version=202
+
+[KFileDialog Settings]
+Places Icons Auto-resize=false
+Places Icons Static Size=22
+
+[MainWindow]
+MenuBar=Disabled
+ToolBarsMovable=Disabled
+
+[Notification Messages]
+ConfirmDelete=true
+
+[PreviewSettings]
+Plugins=ffmpegthumbnailer,appimagethumbnail,audiothumbnail,avif,comicbookthumbnail,cursorthumbnail,djvuthumbnail,ebookthumbnail,exrthumbnail,directorythumbnail,fontthumbnail,heif,imagethumbnail,jpegthumbnail,jxl,kraorathumbnail,windowsexethumbnail,windowsimagethumbnail,gsf-office,opendocumentthumbnail,gdk-pixbuf-thumbnailer,svgthumbnail
+
+[Search]
+Location=Everywhere

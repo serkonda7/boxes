@@ -1,0 +1,38 @@
+// Place your key bindings in this file to override the defaultsauto[]
+[
+  {
+    "key": "ctrl+k ctrl+c",
+    "command": "-editor.action.addCommentLine",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+k ctrl+shift+7",
+    "command": "-editor.foldAllBlockComments",
+    "when": "editorTextFocus && foldingEnabled"
+  },
+  {
+    "key": "ctrl+k ctrl+u",
+    "command": "-editor.action.removeCommentLine",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+shift+[Backslash]",
+    "command": "editor.action.blockComment",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+shift+a",
+    "command": "-editor.action.blockComment",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+[Backslash]",
+    "command": "editor.action.commentLine",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+shift+7",
+    "command": "-editor.action.commentLine",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+]

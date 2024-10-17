@@ -3,4 +3,5 @@
   roles:
     - system
     - vscode
-    - dotfiles
+    - role: dotfiles
+      tags: dotfiles

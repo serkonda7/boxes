@@ -1,18 +1,40 @@
 # boxes
-This repo contains ansible playbooks to automatically provision various systems.
-For the dotfiles deployed during this process, see https://github.com/serkonda7/dotfiles.
+Repo for my ansible playbooks and dotfiles.
+
+**Useful links**
+- Ansible Docs: https://docs.ansible.com/ansible/latest/collections/index.html
+- dotter Wiki: https://github.com/SuperCuber/dotter/wiki/Setup-and-Configuration
 
 
-## Prerequisites
+## Provisioning
+### Prerequisites
 ```sh
-git clone https://github.com/serkonda7/boxes ~/Documents/boxes
-cd ~/Documents/boxes
 yay -Sy && yay -S ansible-core
-ansible-galaxy collection install -r requirements.yml
+git clone https://github.com/serkonda7/boxes ~/boxes
 ```
 
 
-## Process: Provision a new local machine
+### Provision a new machine
 ```sh
-ansible-playbook playbook.yml
+ansible-galaxy collection install -r ansible/requirements.yml
+ansible-playbook ansible/playbook.yml
 ```
+
+
+### Deploy dotfiles only
+```sh
+ansible-playbook ansible/playbook.yml --tags dotfiles
+```
+
+
+## Development
+### Track a new dotfile
+1. `mv ~/<src> ~/boxes/dotfiles/<package>/<dest>`
+2. Add entry to `global.toml`, e.g.
+   ```toml
+    [<package>.files]
+    dotfile = "~/.file"
+    "folder/config" = "~/.local/share/folder/my_config_file"
+   ```
+3. Check package is present in `default.toml`
+4. `dotter deploy`

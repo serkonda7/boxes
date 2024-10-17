@@ -1,0 +1,16 @@
+- name: Install dotter
+  kewlfft.aur.aur:
+    state: latest
+    name: dotter-rs-bin
+
+- name: Create local.toml
+  copy:
+    dest: "{{ playbook_dir }}/../dotfiles/.dotter/local.toml"
+    content: |
+      includes = [".dotter/default.toml"]
+      packages = ["default"]
+
+- name: Deploy using dotter
+  command: dotter deploy --force
+  args:
+    chdir: "{{ playbook_dir }}/../dotfiles"

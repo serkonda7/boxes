@@ -1,0 +1,17 @@
+[git.files]
+gitconfig = "~/.gitconfig"
+
+[kde.variables]
+kde_cmds = [
+  "kwriteconfig6 --file kdeglobals --group KDE --key SingleClick true",
+]
+
+[kde.files]
+"kde/dolphin/view" = "~/.local/share/dolphin/view_properties/global/.directory"
+"kde/dolphin/rc" = "~/.config/dolphinrc"
+"kde/kcminputrc" = "~/.config/kcminputrc"
+"kde/krunnerrc" = "~/.config/krunnerrc"
+
+[vscode.files]
+"vscode/settings.json" = "~/.config/Code/User/settings.json"
+"vscode/keybindings.json" = "~/.config/Code/User/keybindings.json"
