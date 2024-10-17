@@ -23,6 +23,7 @@ ansible-playbook ansible/playbook.yml
 
 ### Deploy dotfiles only
 ```sh
+cd dotfiles
 echo -e 'includes = [".dotter/default.toml"]\npackages = ["default"]' > .dotter/local.toml
 dotter deploy --force
 ```
