@@ -9,7 +9,7 @@ Repo for my ansible playbooks and dotfiles.
 ## Provisioning
 ### Prerequisites
 ```sh
-yay -Sy && yay -S ansible-core dotter
+yay -Sy && yay -S ansible-core
 git clone https://github.com/serkonda7/boxes ~/boxes
 ```
 
@@ -23,9 +23,7 @@ ansible-playbook ansible/playbook.yml
 
 ### Deploy dotfiles only
 ```sh
-cd dotfiles
-echo -e 'includes = [".dotter/default.toml"]\npackages = ["default"]' > .dotter/local.toml
-dotter deploy --force
+ansible-playbook ansible/playbook.yml --tags dotfiles
 ```
 
 
