@@ -14,7 +14,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Install ansible-lint
-        run: pip install ansible-lint
+      - run: pip install ansible ansible-lint
+      - name: Install collections
+        run: ansible-galaxy collection install -r ansible/requirements.yml
       - name: Run ansible-lint
         run: ansible-lint ansible/
