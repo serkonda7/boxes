@@ -11,12 +11,13 @@ Repo for my ansible playbooks and dotfiles.
 ```sh
 yay -Sy && yay -S ansible-core
 git clone https://github.com/serkonda7/boxes ~/boxes
+cd ~/boxes
+ansible-galaxy collection install -r ansible/requirements.yml
 ```
 
 
 ### Provision a new machine
 ```sh
-ansible-galaxy collection install -r ansible/requirements.yml
 ansible-playbook ansible/playbook.yml
 ```
 

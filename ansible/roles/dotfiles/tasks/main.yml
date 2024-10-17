@@ -1,7 +1,14 @@
+- name: Check if dotter is installed
+  changed_when: false
+  command: dotter --version
+  register: dotter_installed
+
 - name: Install dotter
+  when: dotter_installed.rc != 0
   kewlfft.aur.aur:
     state: latest
     name: dotter-rs-bin
+
 
 - name: Create local.toml
   copy:
