@@ -32,3 +32,4 @@
     - vscode-icons-team.vscode-icons
     - yzhang.markdown-all-in-one
   when: "item not in installed_extensions.stdout"
+  changed_when: true
