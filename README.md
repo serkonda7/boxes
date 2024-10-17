@@ -9,7 +9,7 @@ Repo for my ansible playbooks and dotfiles.
 ## Provisioning
 ### Prerequisites
 ```sh
-yay -Sy && yay -S ansible-core
+yay -Sy && yay -S ansible-core --noconfirm
 git clone https://github.com/serkonda7/boxes ~/boxes
 cd ~/boxes
 ansible-galaxy collection install -r ansible/requirements.yml
