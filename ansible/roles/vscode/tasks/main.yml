@@ -1,4 +1,10 @@
+- name: Check if vscode is installed
+  changed_when: false
+  ansible.builtin.command: code --version
+  register: code_installed
+
 - name: Install VS Code
+  when: code_installed.rc != 0
   become: true
   community.general.pacman:
     state: latest
@@ -10,12 +16,12 @@
     name: code-marketplace
 
 - name: Get installed extensions
-  command: code --list-extensions
+  ansible.builtin.command: code --list-extensions
   register: installed_extensions
   changed_when: false
 
 - name: Install extensions
-  command: "code --install-extension {{ item }}"
+  ansible.builtin.command: "code --install-extension {{ item }}"
   with_items:
     - bierner.markdown-footnotes
     - bierner.markdown-mermaid

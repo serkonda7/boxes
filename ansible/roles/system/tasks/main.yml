@@ -27,7 +27,7 @@
     - fastfetch
 
 - name: Cleanup orphan dependencies
-  command: yay -Yc --noconfirm
+  ansible.builtin.command: yay -Yc --noconfirm
   register: cleanup
   changed_when: cleanup.stdout != ""
 

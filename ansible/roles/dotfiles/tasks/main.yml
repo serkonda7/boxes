@@ -1,6 +1,6 @@
 - name: Check if dotter is installed
   changed_when: false
-  command: dotter --version
+  ansible.builtin.command: dotter --version
   register: dotter_installed
 
 - name: Install dotter
@@ -11,13 +11,15 @@
 
 
 - name: Create local.toml
-  copy:
+  ansible.builtin.copy:
+    mode: '644'
     dest: "{{ playbook_dir }}/../dotfiles/.dotter/local.toml"
     content: |
       includes = [".dotter/default.toml"]
       packages = ["default"]
 
 - name: Deploy using dotter
-  command: dotter deploy --force
+  ansible.builtin.command: dotter deploy --force
   args:
     chdir: "{{ playbook_dir }}/../dotfiles"
+  changed_when: true

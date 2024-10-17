@@ -2,6 +2,7 @@
   hosts: localhost
   roles:
     - system
-    - vscode
+    - role: vscode
+      tags: [vscode]
     - role: dotfiles
-      tags: dotfiles
+      tags: [dotfiles]
