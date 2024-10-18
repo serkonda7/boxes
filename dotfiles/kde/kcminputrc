@@ -1,2 +1,5 @@
 PointerAcceleration=0.010
 ScrollFactor=2
+
+[Libinput][1267][12655][ELAN0412:00 04F3:316F Touchpad]
+PointerAcceleration=0.250
