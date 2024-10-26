@@ -1,7 +1,7 @@
 - name: Provision EndeavourOS Virtual Machines
   hosts: localhost
   roles:
-    - role: lts-kernel
+    - role: lts_kernel
       tags: [kernel]
     - role: packages
       tags: [packages, yay]
