@@ -38,9 +38,9 @@ ansible-playbook playbooks/eos-vm.yml --tags dotfiles
 
 
 ## Development
-### Lint ansible files
+### Check file linting
 ```sh
-ansible-lint playbooks/**.yml
+ansible-lint
 ```
 
 
