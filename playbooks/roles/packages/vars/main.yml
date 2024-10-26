@@ -3,16 +3,28 @@ packages_to_install:
   - fastfetch
 
 packages_to_remove:
+  - alsa-firmware
   - eos-apps-info
   - eos-quickstart
   - firefox
   - firewalld
+  - fwupd
   - glances
+  - gst-plugins-bad
   - haruna
+  - iwd
+  - kcalc
   - kdeconnect
+  - kdenetwork-filesharing
   - mpvqt
   - meld
+  - networkmanager-openconnect
+  - networkmanager-openvpn
   - okular
+  - pavucontrol
   - plasma-firewall
+  - poppler-glib
   - print-manager
+  - spectacle
+  - vi
   - welcome
