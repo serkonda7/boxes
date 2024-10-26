@@ -12,23 +12,29 @@ Repo for my ansible playbooks and dotfiles.
 yay -Sy && yay -S ansible-core --noconfirm
 git clone https://github.com/serkonda7/boxes ~/boxes
 cd ~/boxes
-ansible-galaxy collection install -r ansible/requirements.yml
+ansible-galaxy collection install -r playbooks/requirements.yml
 ```
 
 
 ### Provision a new machine
 ```sh
-ansible-playbook ansible/playbook.yml
+ansible-playbook playbooks/eos-vm.yml
 ```
 
 
 ### Deploy dotfiles only
 ```sh
-ansible-playbook ansible/playbook.yml --tags dotfiles
+ansible-playbook playbooks/eos-vm.yml --tags dotfiles
 ```
 
 
 ## Development
+### Lint ansible files
+```sh
+ansible-lint playbooks/**.yml
+```
+
+
 ### Track a new dotfile
 1. `mv ~/<src> ~/boxes/dotfiles/<package>/<dest>`
 2. Add entry to `global.toml`, e.g.
