@@ -28,7 +28,7 @@ ansible-playbook ad-hoc.yml --tags "foo,bar"
 ```
 
 The following ad-hoc roles are defined:
-- _none_
+- `bcsfe`: Battle Cats Save File Editor
 
 
 ### Deploy dotfiles only

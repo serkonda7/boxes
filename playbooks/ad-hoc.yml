@@ -5,3 +5,5 @@
     - stop-playbook
 
     # Tagged ad-hoc roles
+    - role: bcsfe
+      tags: [bcsfe]

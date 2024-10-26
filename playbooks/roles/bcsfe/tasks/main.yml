@@ -1,0 +1,25 @@
+- name: Install packages
+  become: true
+  community.general.pacman:
+    state: latest
+    name: python-pipenv
+
+- name: Create directory
+  ansible.builtin.file:
+    path: "{{ bcsfe_dir }}"
+    state: directory
+    mode: "755"
+
+- name: Install BCSFE
+  ansible.builtin.command:
+    cmd: pipenv install battle-cats-save-editor
+    chdir: "{{ bcsfe_dir }}"
+  changed_when: true
+
+- name: Create bash script for running BCSFE
+  ansible.builtin.copy:
+    dest: ~/Desktop/run_bcsfe.sh
+    content: |
+      #!/bin/bash
+      cd {{ bcsfe_dir }} && pipenv run python -m BCSFE_Python
+    mode: "755"
