@@ -1,0 +1,2 @@
+- name: Stop the playbook execution
+  ansible.builtin.meta: end_play

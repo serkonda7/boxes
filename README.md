@@ -22,6 +22,15 @@ ansible-playbook playbooks/eos-vm.yml
 ```
 
 
+#### Tagged ad-hoc roles
+```sh
+ansible-playbook ad-hoc.yml --tags "foo,bar"
+```
+
+The following ad-hoc roles are defined:
+- _none_
+
+
 ### Deploy dotfiles only
 ```sh
 ansible-playbook playbooks/eos-vm.yml --tags dotfiles

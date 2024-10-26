@@ -1,0 +1,7 @@
+- name: Collection of extra roles that can be run ad-hoc
+  hosts: localhost
+  roles:
+    # Prevent playbook execution by mistake
+    - stop-playbook
+
+    # Tagged ad-hoc roles
