@@ -2,9 +2,9 @@
   hosts: localhost
   roles:
     - role: lts-kernel
-      tags: [lts-kernel]
+      tags: [kernel]
     - role: packages
-      tags: [packages]
+      tags: [packages, yay]
     - role: vscode
       tags: [vscode]
     - role: dotfiles

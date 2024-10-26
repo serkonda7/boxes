@@ -22,14 +22,6 @@
 
 - name: Install extensions
   ansible.builtin.command: "code --install-extension {{ item }}"
-  with_items:
-    - bierner.markdown-footnotes
-    - bierner.markdown-mermaid
-    - eamodio.gitlens
-    - editorconfig.editorconfig
-    - redhat.vscode-yaml
-    - tamasfe.even-better-toml
-    - vscode-icons-team.vscode-icons
-    - yzhang.markdown-all-in-one
+  with_items: "{{ vscode_extensions }}"
   when: "item not in installed_extensions.stdout"
   changed_when: true

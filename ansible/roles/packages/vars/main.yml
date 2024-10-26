@@ -1,0 +1,18 @@
+packages_to_install:
+  - falkon
+  - fastfetch
+
+packages_to_remove:
+  - eos-apps-info
+  - eos-quickstart
+  - firefox
+  - firewalld
+  - glances
+  - haruna
+  - kdeconnect
+  - mpvqt
+  - meld
+  - okular
+  - plasma-firewall
+  - print-manager
+  - welcome

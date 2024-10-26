@@ -3,20 +3,7 @@
   community.general.pacman:
     state: absent
     name: "{{ item }}"
-  with_items:
-    - eos-apps-info
-    - eos-quickstart
-    - firefox
-    - firewalld
-    - glances
-    - haruna
-    - kdeconnect
-    - mpvqt
-    - meld
-    - okular
-    - plasma-firewall
-    - print-manager
-    - welcome
+  with_items: "{{ packages_to_remove }}"
   register: removals
   changed_when: removals.changed
 
@@ -25,9 +12,7 @@
   community.general.pacman:
     state: latest
     name: "{{ item }}"
-  with_items:
-    - falkon
-    - fastfetch
+  with_items: "{{ packages_to_install }}"
 
 - name: Cleanup orphan dependencies
   ansible.builtin.command: yay -Yc --noconfirm

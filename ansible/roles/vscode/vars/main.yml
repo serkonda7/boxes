@@ -1,0 +1,9 @@
+vscode_extensions:
+  - bierner.markdown-footnotes
+  - bierner.markdown-mermaid
+  - eamodio.gitlens
+  - editorconfig.editorconfig
+  - redhat.vscode-yaml
+  - tamasfe.even-better-toml
+  - vscode-icons-team.vscode-icons
+  - yzhang.markdown-all-in-one
