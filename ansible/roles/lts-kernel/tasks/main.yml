@@ -1,0 +1,26 @@
+- name: Check current kernel
+  ansible.builtin.command: uname -r
+  register: kernel_version
+  changed_when: false
+
+- name: Switch to LTS kernel
+  when: "'lts' not in kernel_version.stdout"
+  become: true
+  block:
+    - name: Install LTS
+      community.general.pacman:
+        state: latest
+        name: linux-lts linux-lts-headers
+
+    - name: Remove latest kernel
+      community.general.pacman:
+        state: absent
+        name: linux linux-headers
+
+    - name: Update bootloader
+      ansible.builtin.command: grub-mkconfig -o /boot/grub/grub.cfg
+      changed_when: true
+
+    - name: Recommend system reboot
+      ansible.builtin.debug:
+        msg: "Reboot recommended!"

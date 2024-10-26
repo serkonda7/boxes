@@ -1,7 +1,10 @@
-- name: Provision EndeavourOS
+- name: Provision EndeavourOS Virtual Machines
   hosts: localhost
   roles:
-    - system
+    - role: lts-kernel
+      tags: [lts-kernel]
+    - role: packages
+      tags: [packages]
     - role: vscode
       tags: [vscode]
     - role: dotfiles

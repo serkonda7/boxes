@@ -8,11 +8,14 @@
     - eos-quickstart
     - firefox
     - firewalld
+    - glances
     - haruna
     - kdeconnect
     - mpvqt
     - meld
     - okular
+    - plasma-firewall
+    - print-manager
     - welcome
   register: removals
   changed_when: removals.changed
@@ -38,6 +41,7 @@
   register: upgrades
   changed_when: upgrades.changed
 
-- name: Reboot system
+- name: Recommend system reboot
   when: removals.changed or upgrades.changed
-  ansible.builtin.reboot:
+  ansible.builtin.debug:
+    msg: "Reboot recommended!"
