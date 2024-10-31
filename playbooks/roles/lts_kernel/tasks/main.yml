@@ -7,17 +7,27 @@
   when: "'lts' not in kernel_version.stdout"
   become: true
   block:
+    - name: Check GRUB bootloader
+      stat:
+        path: /boot/grub
+      register: grub_installed
+
     - name: Install LTS
       community.general.pacman:
         state: latest
-        name: linux-lts linux-lts-headers
+        name:
+          - linux-lts
+          - linux-lts-headers
 
     - name: Remove latest kernel
       community.general.pacman:
         state: absent
-        name: linux linux-headers
+        name:
+          - linux
+          - linux-headers
 
-    - name: Update bootloader
+    - name: Update GRUB bootloader
+      when: grub_installed.stat.exists
       ansible.builtin.command: grub-mkconfig -o /boot/grub/grub.cfg
       changed_when: true
 

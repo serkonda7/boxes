@@ -1,6 +1,7 @@
 - name: Check if dotter is installed
   changed_when: false
-  ansible.builtin.command: dotter --version
+  failed_when: false
+  ansible.builtin.shell: command -v dotter
   register: dotter_installed
 
 - name: Install dotter

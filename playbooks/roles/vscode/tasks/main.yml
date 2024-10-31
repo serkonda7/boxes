@@ -1,6 +1,7 @@
 - name: Check if vscode is installed
   changed_when: false
-  ansible.builtin.command: code --version
+  failed_when: false
+  ansible.builtin.shell: command -v code
   register: code_installed
 
 - name: Install VS Code

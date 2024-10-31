@@ -21,6 +21,9 @@ ansible-galaxy collection install -r playbooks/requirements.yml
 ansible-playbook playbooks/eos-vm.yml
 ```
 
+The following playbooks are defined:
+- `eos-vm`: EndeavourOS Virtual Machine starting from a offline install
+
 
 #### Tagged ad-hoc roles
 ```sh
