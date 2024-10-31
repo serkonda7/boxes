@@ -5,19 +5,23 @@ packages_to_install:
 packages_to_remove:
   - alsa-firmware
   - eos-apps-info
+  - eos-log-tool
   - eos-quickstart
   - firefox
   - firewalld
   - fwupd
   - glances
   - gst-plugins-bad
+  - gst-plugins-ugly
   - haruna
   - iwd
   - kcalc
   - kdeconnect
   - kdenetwork-filesharing
-  - mpvqt
+  - kwayland-integration
+  - maliit-keyboard
   - meld
+  - mpvqt
   - networkmanager-openconnect
   - networkmanager-openvpn
   - okular
@@ -25,6 +29,8 @@ packages_to_remove:
   - plasma-firewall
   - poppler-glib
   - print-manager
+  - python-pyqt5
+  - reflector-simple
   - spectacle
   - vi
   - welcome
