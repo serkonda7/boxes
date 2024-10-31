@@ -27,10 +27,11 @@ The following playbooks are defined:
 
 #### Tagged ad-hoc roles
 ```sh
-ansible-playbook ad-hoc.yml --tags "foo,bar"
+ansible-playbook playbooks/ad-hoc.yml --tags "foo,bar"
 ```
 
 The following ad-hoc roles are defined:
+- `ansible`: Ansible Development environment
 - `bcsfe`: Battle Cats Save File Editor
 
 

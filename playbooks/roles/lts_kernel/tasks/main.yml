@@ -8,7 +8,7 @@
   become: true
   block:
     - name: Check GRUB bootloader
-      stat:
+      ansible.builtin.stat:
         path: /boot/grub
       register: grub_installed
 

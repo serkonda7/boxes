@@ -5,5 +5,7 @@
     - stop_playbook
 
     # Tagged ad-hoc roles
+    - role: ansible_dev
+      tags: [ansible]
     - role: bcsfe
       tags: [bcsfe]

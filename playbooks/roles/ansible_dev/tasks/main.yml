@@ -1,0 +1,12 @@
+- name: Install ansible-lint
+  become: true
+  community.general.pacman:
+    state: latest
+    name: ansible-lint
+
+- name: Install VS Code extension
+  ansible.builtin.command: code --install-extension {{ item }}
+  with_items:
+    - ms-python.python
+    - redhat.ansible
+  changed_when: true
