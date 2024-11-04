@@ -9,3 +9,5 @@
       tags: [ansible]
     - role: bcsfe
       tags: [bcsfe]
+    - role: typst
+      tags: [typst]

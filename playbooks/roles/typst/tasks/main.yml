@@ -1,0 +1,12 @@
+- name: Install typst
+  become: true
+  community.general.pacman:
+    state: latest
+    name:
+      - rust
+      - typst
+      - typst-lsp
+
+- name: Install VS Code extension
+  ansible.builtin.command: code --install-extension nvarner.typst-lsp
+  changed_when: true

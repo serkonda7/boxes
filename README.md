@@ -33,6 +33,7 @@ ansible-playbook playbooks/ad-hoc.yml --tags "foo,bar"
 The following ad-hoc roles are defined:
 - `ansible`: Ansible Development environment
 - `bcsfe`: Battle Cats Save File Editor
+- `typst`: Typst language and tooling
 
 
 ### Deploy dotfiles only
