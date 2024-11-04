@@ -15,3 +15,8 @@ kde_cmds = [
 [vscode.files]
 "vscode/settings.json" = "~/.config/Code/User/settings.json"
 "vscode/keybindings.json" = "~/.config/Code/User/keybindings.json"
+
+[zsh.files]
+"zsh/rc" = "~/.zshrc"
+"zsh/p10k" = "~/.p10k.zsh"
+"zsh/plugins" = "~/.zsh_plugins.txt"
