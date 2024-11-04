@@ -7,5 +7,7 @@
       tags: [packages, yay]
     - role: vscode
       tags: [vscode]
+    - role: zsh
+      tags: [zsh]
     - role: dotfiles
       tags: [dotfiles]

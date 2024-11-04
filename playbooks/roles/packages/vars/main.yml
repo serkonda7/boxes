@@ -4,6 +4,7 @@ packages_to_install:
 
 packages_to_remove:
   - alsa-firmware
+  - bluedevil
   - eos-apps-info
   - eos-log-tool
   - eos-quickstart

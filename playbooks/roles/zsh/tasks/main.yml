@@ -1,0 +1,30 @@
+- name: Install zsh
+  become: true
+  community.general.pacman:
+    state: latest
+    name: zsh
+
+- name: Install antidote
+  kewlfft.aur.aur:
+    state: latest
+    name: zsh-antidote
+
+- name: Get current shell
+  ansible.builtin.shell: echo $SHELL
+  register: current_shell
+  changed_when: false
+
+- name: Get zsh path
+  changed_when: false
+  failed_when: false
+  ansible.builtin.shell: command -v zsh # noqa command-instead-of-shell
+  register: zsh_path
+
+- name: Change default shell
+  when: current_shell.stdout != zsh_path.stdout
+  become: true
+  ansible.builtin.user:
+    name: vm
+    shell: "{{ zsh_path.stdout }}"
+
+# Note: configs are provided via dotfiles
