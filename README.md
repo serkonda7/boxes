@@ -31,14 +31,20 @@ ansible-playbook playbooks/ad-hoc.yml --tags "foo,bar"
 ```
 
 The following ad-hoc roles are defined:
-- `ansible`: Ansible Development environment
-- `bcsfe`: Battle Cats Save File Editor
-- `typst`: Typst language and tooling
+|              |                                 |
+| ------------ | ------------------------------- |
+| `ansible`    | Ansible Development environment |
+| `bcsfe`      | Battle Cats Save File Editor    |
+| `dotfiles`   | Dotfile management              |
+| `lts_kernel` | Switch to LTS Linux             |
+| `typst`      | Typst language and tooling      |
+| `vscode`     | Code-OSS and common extensions  |
+| `zsh`        | ZSH and antidote                |
 
 
 ### Deploy dotfiles only
 ```sh
-ansible-playbook playbooks/eos-vm.yml --tags dotfiles
+ansible-playbook playbooks/ad-hoc.yml --tags dotfiles
 ```
 
 

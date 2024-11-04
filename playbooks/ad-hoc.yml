@@ -9,5 +9,13 @@
       tags: [ansible]
     - role: bcsfe
       tags: [bcsfe]
+    - role: dotfiles
+      tags: [dotfiles]
+    - role: lts_kernel
+      tags: [kernel]
     - role: typst
       tags: [typst]
+    - role: vscode
+      tags: [vscode]
+    - role: zsh
+      tags: [zsh]
