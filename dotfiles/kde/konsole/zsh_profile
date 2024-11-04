@@ -1,0 +1,4 @@
+[General]
+Command=/usr/bin/zsh
+Name=zsh
+Parent=FALLBACK/

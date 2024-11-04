@@ -9,6 +9,8 @@ kde_cmds = [
 [kde.files]
 "kde/dolphin/view" = "~/.local/share/dolphin/view_properties/global/.directory"
 "kde/dolphin/rc" = "~/.config/dolphinrc"
+"kde/konsole/rc" = "~/.config/konsolerc"
+"kde/konsole/zsh_profile" = "~/.local/share/konsole/zsh.profile"
 "kde/kcminputrc" = "~/.config/kcminputrc"
 "kde/krunnerrc" = "~/.config/krunnerrc"
 
