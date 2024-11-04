@@ -1,0 +1,7 @@
+# Theme / Prompt
+romkatv/powerlevel10k kind:fpath
+
+# Plugins
+MichaelAquilina/zsh-you-should-use
+zsh-users/zsh-autosuggestions
+zsh-users/zsh-syntax-highlighting

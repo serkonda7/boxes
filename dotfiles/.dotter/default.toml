@@ -3,4 +3,5 @@ depends = [
   "git",
   "kde",
   "vscode",
+  "zsh",
 ]
