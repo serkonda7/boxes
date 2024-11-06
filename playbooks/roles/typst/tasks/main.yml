@@ -8,5 +8,5 @@
       - typst-lsp
 
 - name: Install VS Code extension
-  ansible.builtin.command: code --install-extension nvarner.typst-lsp
+  ansible.builtin.command: code --install-extension myriad-dreamin.tinymist
   changed_when: true
