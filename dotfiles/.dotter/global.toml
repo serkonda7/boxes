@@ -13,6 +13,9 @@ kde_cmds = [
 "kde/konsole/zsh_profile" = "~/.local/share/konsole/zsh.profile"
 "kde/kcminputrc" = "~/.config/kcminputrc"
 "kde/krunnerrc" = "~/.config/krunnerrc"
+"kde/ksmserverrc" = "~/.config/ksmserverrc"
+"kde/kscreenlockerrc" = "~/.config/kscreenlockerrc"
+"kde/feedback" = "~/.config/PlasmaUserFeedback"
 
 [vscode.files]
 "vscode/settings.json" = "~/.config/Code/User/settings.json"
