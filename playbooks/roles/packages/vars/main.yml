@@ -1,37 +1,11 @@
-packages_to_install:
+packages_to_install: "{{ packages_add_common + packages_add_extra }}"
+packages_to_remove: "{{ packages_rem_common + packages_rem_extra }}"
+
+packages_add_common:
   - falkon
   - fastfetch
 
-packages_to_remove:
-  - alsa-firmware
-  - bluedevil
-  - eos-apps-info
-  - eos-log-tool
-  - eos-quickstart
-  - firefox
-  - firewalld
-  - fwupd
-  - glances
-  - gst-plugins-bad
-  - gst-plugins-ugly
-  - haruna
-  - iwd
-  - kcalc
-  - kdeconnect
-  - kdenetwork-filesharing
-  - kwayland-integration
-  - maliit-keyboard
-  - meld
-  - mpvqt
-  - networkmanager-openconnect
-  - networkmanager-openvpn
-  - okular
-  - pavucontrol
-  - plasma-firewall
-  - poppler-glib
-  - print-manager
-  - python-pyqt5
-  - reflector-simple
-  - spectacle
-  - vi
-  - welcome
+packages_rem_common: []
+
+packages_add_extra: []
+packages_rem_extra: []

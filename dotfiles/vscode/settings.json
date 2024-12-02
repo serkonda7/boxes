@@ -73,6 +73,10 @@
   },
   "typescript.updateImportsOnFileMove.enabled": "always",
 
+  // telemetry
+  "redhat.telemetry.enabled": false,
+  "solidity.telemetry": false,
+
   // other extension settings and unsorted
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   "githubPullRequests.createOnPublishBranch": "never",
@@ -83,7 +87,7 @@
     ";"
   ],
   "markdown.extension.toc.updateOnSave": false,
-  "solidity.telemetry": false,
   "codeium.enableCodeLens": false,
-  "redhat.telemetry.enabled": false
+  "extensions.autoUpdate": false,
+  "explorer.confirmPasteNative": false
 }

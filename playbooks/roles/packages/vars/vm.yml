@@ -1,0 +1,35 @@
+packages_add_vm: []
+
+packages_rem_vm:
+  - alsa-firmware
+  - bluedevil
+  - eos-apps-info
+  - eos-log-tool
+  - eos-quickstart
+  - firefox
+  - firewalld
+  - fwupd
+  - glances
+  - gst-plugins-bad
+  - gst-plugins-ugly
+  - haruna
+  - iwd
+  - kcalc
+  - kdeconnect
+  - kdenetwork-filesharing
+  - kwayland-integration
+  - maliit-keyboard
+  - meld
+  - mpvqt
+  - networkmanager-openconnect
+  - networkmanager-openvpn
+  - okular
+  - pavucontrol
+  - plasma-firewall
+  - poppler-glib
+  - print-manager
+  - python-pyqt5
+  - reflector-simple
+  - spectacle
+  - vi
+  - welcome

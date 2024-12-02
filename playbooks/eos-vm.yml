@@ -5,6 +5,9 @@
       tags: [kernel]
     - role: packages
       tags: [packages, yay]
+      vars:
+        packages_add_extra: "{{ packages_add_vm }}"
+        packages_rem_extra: "{{ packages_rem_vm }}"
     - role: vscode
       tags: [vscode]
     - role: zsh
